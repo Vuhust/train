@@ -1,0 +1,14 @@
+
+version: '3.8'  # Version of Docker Compose file format
+
+services:
+  mysql:  # Name of the service
+    image: mysql:5.7 # Image to be used
+    container_name: mysql-train  # Name of the container
+    environment:  # Environment variables
+      MYSQL_DATABASE: 'mysql'  # Initial database to be created
+      MYSQL_USER: 'vu'  # Non-root user for the database
+      MYSQL_PASSWORD: '12345678'  # Password for the non-root user
+      MYSQL_ROOT_PASSWORD: '12345678'  # Password for the root user
+    ports:  # Port mapping
+      - "3306:3306"  # Map port 3306 on the host to port 3306 in the container
